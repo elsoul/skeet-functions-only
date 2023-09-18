@@ -1,4 +1,4 @@
-![Skeet Next.js Template](https://storage.googleapis.com/skeet-assets/imgs/samples/WebAppBoilerplate.png)
+![Skeet Functions Only Template](https://storage.googleapis.com/skeet-assets/imgs/samples/WebAppBoilerplate.png)
 
 <p align="center">
   <a href="https://twitter.com/intent/follow?screen_name=ELSOUL_LABO2">
