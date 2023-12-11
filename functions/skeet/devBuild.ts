@@ -1,5 +1,6 @@
 import { build } from 'esbuild'
-;(async () => {
+
+void (async () => {
   await build({
     entryPoints: ['./src/index.ts'],
     bundle: true,
@@ -10,5 +11,20 @@ import { build } from 'esbuild'
       'process.env.NODE_ENV': `"development"`,
     },
     format: 'cjs',
+    tsconfig: './tsconfig.json',
+  })
+
+  await build({
+    entryPoints: ['../../common/**/*'],
+    bundle: true,
+    minify: true,
+    outdir: './dist',
+    platform: 'node',
+    define: {
+      'process.env.NODE_ENV': `"development"`,
+    },
+    format: 'cjs',
+    external: ['../../common/*'],
+    tsconfig: './tsconfig.json',
   })
 })()
