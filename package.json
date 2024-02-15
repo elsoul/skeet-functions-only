@@ -5,33 +5,36 @@
   "author": "ELSOUL LABO B.V.",
   "license": "Apache-2.0",
   "private": false,
+  "engines": {
+    "pnpm": "8.15.2",
+    "npm": "please_use_pnpm_instead",
+    "node": "20",
+    "version": "0.0.1"
+  },
+  "packageManager": "pnpm@8.15.2",
   "scripts": {
     "format": "prettier --write --ignore-unknown .",
     "lint": "eslint --ext .ts,.tsx --fix .",
     "typecheck": "tsc --noEmit",
-    "update:packages": "ncu -u && yarn",
     "skeet": "run-p skeet:*",
-    "skeet:skeet": "yarn --cwd functions/skeet dev",
+    "skeet:skeet": "pnpm -F skeet-func dev",
+    "skeet-func": "pnpm -F skeet-func",
     "skeet:dev": "firebase emulators:start --import=./tmp/data --export-on-exit",
-    "functions:build": "yarn --cwd functions/skeet build",
-    "functions:dev": "firebase emulators:start --only functions",
-    "functions:deploy": "firebase deploy --only functions",
     "discord": "npx ts-node -r tsconfig-paths/register --transpile-only ./.github/workflows/runDiscordChangeLog.ts"
   },
   "dependencies": {
-    "dotenv": "16.3.1"
+    "dotenv": "16.4.4"
   },
   "devDependencies": {
     "dotenv": "16.3.1",
-    "esbuild": "0.19.9",
-    "eslint": "8.55.0",
+    "esbuild": "0.20.0",
+    "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
-    "firebase-functions": "^4.5.0",
-    "firebase-tools": "13.0.1",
-    "nodemon": "3.0.2",
-    "npm-check-updates": "16.14.11",
+    "firebase-functions": "4.7.0",
+    "firebase-tools": "13.3.0",
+    "nodemon": "3.0.3",
     "npm-run-all": "4.1.5",
-    "prettier": "3.1.1",
+    "prettier": "3.2.5",
     "ts-loader": "9.5.1",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.3.3"
